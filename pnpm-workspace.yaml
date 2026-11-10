@@ -1,0 +1,11 @@
+engineStrict: true
+strictPeerDependencies: true
+savePrefix: '^'
+minimumReleaseAgeExclude:
+  - icu-minify@4.14.10
+  - next-intl-swc-plugin-extractor@4.14.10
+  - next-intl@4.14.10
+  - use-intl@4.14.10
+allowBuilds:
+  '@parcel/watcher': true
+  '@swc/core': true
