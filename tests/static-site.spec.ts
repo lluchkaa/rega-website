@@ -11,8 +11,8 @@ test('root chooser opens either exported language', async ({ page }) => {
 })
 
 for (const { locale, text } of [
-  { locale: 'en', text: 'Welcome to REGA.' },
-  { locale: 'uk', text: 'Ласкаво просимо до REGA.' },
+  { locale: 'en', text: 'Find your confidence.' },
+  { locale: 'uk', text: 'Впевненість починається тут.' },
 ]) {
   test(`${locale} is translated in static HTML without JavaScript`, async ({
     browser,
@@ -22,8 +22,10 @@ for (const { locale, text } of [
     const response = await page.goto(`http://127.0.0.1:4173/${locale}/`)
     expect(response?.status()).toBe(200)
     await expect(page.locator('html')).toHaveAttribute('lang', locale)
-    await expect(page.getByText(text, { exact: true })).toBeVisible()
-    await expect(page).toHaveTitle('REGA')
+    await expect(
+      page.getByRole('heading', { level: 1, name: text, exact: true }),
+    ).toBeVisible()
+    await expect(page).toHaveTitle(/REGA/)
     await context.close()
   })
 }
@@ -37,14 +39,17 @@ test('language switching and reload work against static files', async ({
   await page.getByRole('link', { name: 'Українська' }).click()
   await expect(page).toHaveURL(/\/uk\/$/)
   await expect(
-    page.getByText('Ласкаво просимо до REGA.', { exact: true }),
+    page.getByRole('heading', {
+      level: 1,
+      name: 'Впевненість починається тут.',
+    }),
   ).toBeVisible()
   await page.reload()
   await expect(page.locator('html')).toHaveAttribute('lang', 'uk')
   await page.getByRole('link', { name: 'English' }).click()
   await expect(page).toHaveURL(/\/en\/$/)
   await expect(
-    page.getByText('Welcome to REGA.', { exact: true }),
+    page.getByRole('heading', { level: 1, name: 'Find your confidence.' }),
   ).toBeVisible()
   expect(errors).toEqual([])
 })
@@ -52,7 +57,7 @@ test('language switching and reload work against static files', async ({
 test('Next Image loads without a runtime image optimizer', async ({ page }) => {
   await page.goto('/en/')
   const image = page.locator('img')
-  await expect(image).toHaveAttribute('src', '/favicon.ico')
+  await expect(image).toHaveAttribute('src', '/images/training.jpg')
   await expect(image).toHaveJSProperty('complete', true)
   await expect
     .poll(() =>

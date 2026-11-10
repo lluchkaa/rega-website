@@ -1,6 +1,313 @@
 {
   "Home": {
-    "description": "Welcome to REGA.",
-    "language": "Language"
+    "metaTitle": "REGA — driving and motorcycle school in Lviv",
+    "eyebrow": "REGA · Driving school in Lviv",
+    "title": "Find your",
+    "titleAccent": "confidence.",
+    "description": "Your first drive. A busy junction. A new motorcycle. Build the skills to enjoy the road, one practical lesson at a time.",
+    "language": "Language",
+    "chooseCourse": "Find your course",
+    "tryLesson": "Free trial lesson",
+    "imageAlt": "An instructor and a student shaking hands beside a REGA training car",
+    "photoEyebrow": "Less uncertainty. More understanding.",
+    "photoCaption": "Confidence starts with practice.",
+    "trainingEyebrow": "Your next step",
+    "trainingTitle": "Where would you like to go?",
+    "allCourses": "Explore all training",
+    "paths": {
+      "start": {
+        "title": "Start driving",
+        "description": "Get to know the car, build your first skills and work towards driving in the city. Begin at your own level.",
+        "link": "Beginner training"
+      },
+      "improve": {
+        "title": "Feel more in control",
+        "description": "Return after a break, practise parking or explore how your car responds in challenging situations.",
+        "link": "Develop your skills"
+      },
+      "moto": {
+        "title": "Discover two wheels",
+        "description": "From balance and braking to city riding. Find motorcycle training that meets you where you are.",
+        "link": "Motorcycle training"
+      }
+    },
+    "schoolEyebrow": "The REGA approach",
+    "schoolTitle": "Understand the road. Enjoy the drive.",
+    "schoolDescription": "Good driving is more than knowing the controls. At REGA, practical exercises and discussion help you understand your vehicle, read the road and make considered decisions.",
+    "aboutLink": "Meet the school",
+    "principles": {
+      "practice": "Practise manoeuvres on a dedicated training ground.",
+      "attention": "Work on the skills that matter to your driving.",
+      "progress": "Move from simple exercises to more demanding situations."
+    },
+    "giftTitle": "Give someone a new possibility.",
+    "giftDescription": "A driving or motorcycle training certificate is a thoughtful invitation to learn, explore and grow in confidence.",
+    "giftLink": "Explore gift certificates",
+    "trainingJump": "Jump to training options"
+  },
+  "Shell": {
+    "home": "REGA home",
+    "tagline": "Driving & motorcycle school",
+    "courses": "Training",
+    "gifts": "Gift certificates",
+    "about": "About REGA",
+    "contacts": "Contacts",
+    "navigation": "Main navigation",
+    "trial": "Try a free lesson",
+    "menu": "Menu",
+    "theme": "Color theme",
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme",
+    "footerDescription": "Driving is a skill. Confidence comes with practice. Learn both with REGA in Lviv.",
+    "contactUs": "Let’s talk",
+    "city": "Lviv, Ukraine",
+    "rights": "Driving skills school of Taras Rega.",
+    "designSystem": "UI kit",
+    "nextStep": "Your next move",
+    "ctaTitle": "Your road to confidence starts here.",
+    "ctaDescription": "Tell us about your experience. We’ll help you choose a course and find a convenient time.",
+    "call": "Call REGA",
+    "skip": "Skip to content"
+  },
+  "InitialCourse": {
+    "eyebrow": "Car training / Beginner course",
+    "title": "Start with confidence",
+    "description": "From your first moments behind the wheel to independent city driving. Learn step by step, at a pace that works for you.",
+    "label": "For new drivers",
+    "overview": "A clear road ahead",
+    "body": "Start on a safe training ground, get comfortable with the controls, then put your skills into practice in city traffic. Your instructor adapts the training plan to your experience.",
+    "skills": "What you’ll practise",
+    "skill1": "Seating position, steering and smooth use of the controls",
+    "skill2": "Moving off, hill starts, acceleration and controlled braking",
+    "skill3": "Reversing, turning in narrow spaces and parking",
+    "skill4": "Planning a route and anticipating other road users",
+    "format": "Your training, your pace",
+    "duration": "From 8 sessions · 16 hours",
+    "durationLabel": "Recommended starting format",
+    "ownPrice": "₴11,200",
+    "ownLabel": "On your own car",
+    "schoolPrice": "₴14,000",
+    "schoolLabel": "On a school car · fuel included",
+    "validity": "Prices listed by REGA are valid through 30 November 2026. Confirm the current price and your individual plan when booking.",
+    "book": "Discuss my training",
+    "back": "All training programmes"
+  },
+  "UIKit": {
+    "eyebrow": "REGA / Design system",
+    "title": "Made for the road ahead.",
+    "description": "The shared building blocks of REGA: warm surfaces, clear typography and an orange thread through every interaction.",
+    "palette": "A familiar spark. A fresh palette.",
+    "controls": "Clear actions",
+    "cards": "Room for what matters",
+    "cardTitle": "Learn at your own pace",
+    "cardDescription": "Practical skills. A personal approach. Real confidence.",
+    "primary": "Primary action",
+    "secondary": "Secondary action",
+    "outline": "Outline action",
+    "disabled": "Unavailable",
+    "badge": "For every level",
+    "faq": "A little more detail",
+    "question": "How do I choose a course?",
+    "answer": "Start with your current experience and what you want to feel more confident doing. Our team will help you find the right programme.",
+    "tokenBackground": "Background",
+    "tokenPrimary": "Primary",
+    "tokenAccent": "Brand orange",
+    "tokenMuted": "Muted surface",
+    "tokenCard": "Card surface"
+  },
+  "Catalogue": {
+    "eyebrow": "Training at REGA",
+    "title": "A course for your next step.",
+    "description": "Start from the beginning or build on what you know. Explore driving and motorcycle programmes, practical workshops and training for teams.",
+    "jumpLabel": "Training categories",
+    "helpTitle": "Not sure where to begin?",
+    "helpDescription": "A free trial lesson gives you a chance to meet the school, discuss your experience and find an appropriate programme. Book ahead with our team.",
+    "helpLink": "Explore the trial lesson",
+    "groups": {
+      "car": {
+        "eyebrow": "Four wheels",
+        "title": "Car training",
+        "description": "From your first lesson to more demanding situations. Choose the skills you want to work on."
+      },
+      "moto": {
+        "eyebrow": "Two wheels",
+        "title": "Motorcycle training",
+        "description": "Build the foundations, take them into the city and keep developing your technique."
+      },
+      "more": {
+        "eyebrow": "A different starting point",
+        "title": "More ways to learn",
+        "description": "Try a lesson, arrange training for your team or discuss a specialist programme."
+      }
+    },
+    "courses": {
+      "licence": {
+        "title": "Category B · Start level",
+        "description": "Theory and practical driving for people working towards their first driving licence.",
+        "label": "First driving licence"
+      },
+      "beginner": {
+        "title": "Beginner course",
+        "description": "Build essential car-control skills, then progress to manoeuvres and city driving.",
+        "label": "Little or no experience"
+      },
+      "junior": {
+        "title": "Junior driving",
+        "description": "A supervised introduction to car control and road awareness on a closed training ground.",
+        "label": "For teenagers"
+      },
+      "main": {
+        "title": "Core driving course",
+        "description": "Develop city-driving awareness, practise parking or rebuild your skills after a break.",
+        "label": "Build on your experience"
+      },
+      "professional": {
+        "title": "Advanced driving",
+        "description": "Explore defensive driving, vehicle stability and responses to unexpected situations.",
+        "label": "Levels 1 and 2"
+      },
+      "winter": {
+        "title": "Winter driving",
+        "description": "Understand grip, braking and vehicle control on snow and slippery surfaces.",
+        "label": "Seasonal training"
+      },
+      "parking": {
+        "title": "Parking & manoeuvring",
+        "description": "Get to know your car’s dimensions and practise reversing and parking in limited space.",
+        "label": "Focused skills practice"
+      },
+      "sport": {
+        "title": "Small-group sport training",
+        "description": "Refine precision and explore vehicle dynamics through dedicated exercises on a closed ground.",
+        "label": "For experienced drivers"
+      },
+      "motoBeginner": {
+        "title": "Beginner motorcycle course",
+        "description": "Start with riding position, balance, turning and braking on a dedicated practice ground.",
+        "label": "Your first riding skills"
+      },
+      "motoCity": {
+        "title": "Moto city",
+        "description": "Take your existing riding skills into traffic with instructor guidance and radio communication.",
+        "label": "For riders with basic skills"
+      },
+      "motoProfessional": {
+        "title": "Advanced motorcycle course",
+        "description": "Develop more precise motorcycle control and practise responses to demanding riding situations.",
+        "label": "Develop your riding technique"
+      },
+      "motoClub": {
+        "title": "Motorcycle practice group",
+        "description": "Keep practising through gymkhana exercises, cornering work and group training.",
+        "label": "Ongoing practice"
+      },
+      "trial": {
+        "title": "Free trial lesson",
+        "description": "Meet the school, try practical exercises and discuss a suitable training programme.",
+        "label": "By prior appointment"
+      },
+      "corporate": {
+        "title": "Corporate training",
+        "description": "Defensive-driving training shaped around your team and the way it uses its vehicles.",
+        "label": "For teams and businesses"
+      },
+      "assessment": {
+        "title": "Driver assessment",
+        "description": "Discuss a practical assessment of driving skills for potential employees.",
+        "label": "For employers"
+      },
+      "circuit": {
+        "title": "Carpathian Ring",
+        "description": "Build experience on a longer road journey, with practice in route planning, overtaking and driving outside the city.",
+        "label": "Long-distance road training"
+      }
+    }
+  },
+  "Gifts": {
+    "eyebrow": "Give an experience",
+    "title": "A gift that goes further.",
+    "description": "Give someone you care about driving skills they can take into everyday life. Explore REGA gift certificates for driving and motorcycle training.",
+    "order": "Order a gift certificate",
+    "orderNote": "Call us to choose a course and arrange your gift.",
+    "certificateLabel": "Gift certificate",
+    "certificateTitle": "Confidence. For the road ahead.",
+    "certificateFooter": "Drivers & Bikers School · Lviv",
+    "certificateBadge": "Made for them",
+    "whyEyebrow": "Care, with a purpose",
+    "whyTitle": "More than something to unwrap.",
+    "whyBody": "A driving course is a thoughtful way to support someone close to you. Whether they are taking their first steps or developing existing skills, talk to us about training that fits their experience and interests.",
+    "explore": "Explore training",
+    "email": "Ask by email",
+    "stepsTitle": "Make it personal.",
+    "chooseTitle": "Think about the driver",
+    "chooseBody": "A first lesson, more confidence behind the wheel, or time on a motorcycle? Start with the skills they would enjoy learning.",
+    "discussTitle": "Talk to REGA",
+    "discussBody": "Call or email the school. We will help you discuss the course and confirm the certificate details before you order.",
+    "giveTitle": "Give a useful experience",
+    "giveBody": "Surprise someone with the opportunity to learn skills that will stay with them beyond the occasion.",
+    "terms": "Confirm the current price, available courses, certificate validity, delivery and booking arrangements directly with the school before ordering. The certificate shown is an illustration."
+  },
+  "Contacts": {
+    "eyebrow": "REGA · Lviv",
+    "title": "Let’s find your starting point.",
+    "description": "Questions about training, a gift certificate or your next lesson? Contact the REGA team and arrange the right place and time to meet.",
+    "direct": "Talk to the school",
+    "contactTitle": "A conversation starts here.",
+    "write": "Prefer to write?",
+    "contactNote": "Tell us which course interests you and a little about your driving experience. We can discuss the next step together.",
+    "hoursTitle": "When we’re here",
+    "administration": "Administration",
+    "coaches": "Coaching team",
+    "weekdays": "Monday–Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "closed": "Closed",
+    "byArrangement": "By arrangement",
+    "locationsTitle": "Space to practise.",
+    "locationsNote": "Two training grounds in Lviv. Confirm your lesson location with the school before travelling.",
+    "ground": "Training ground",
+    "arenaTitle": "Arena Lviv",
+    "arenaAddress": "199 Stryiska Street, Lviv, 79031 · on the Arena Lviv stadium grounds",
+    "yeroshenkaTitle": "Yeroshenka Street",
+    "yeroshenkaAddress": "28 Yeroshenka Street, Lviv, 79039",
+    "map": "Open in Google Maps",
+    "meetingTitle": "Practice meeting points",
+    "meetingPoints": "Fabrik · King Cross · Pivdennyi · Victoria Gardens · Novyi Lviv · Shuvar · Aquapark",
+    "meetingNote": "Meeting points depend on the lesson arrangements. Ask the team to confirm where your practice starts."
+  },
+  "CourseDetail": {
+    "eyebrow": "REGA · Training programmes",
+    "back": "All training programmes",
+    "practice": "Practical learning",
+    "audience": "Who this is for",
+    "skills": "What you will work on",
+    "format": "Your training at a glance",
+    "duration": "Course duration",
+    "free": "Free introductory lesson",
+    "freeNote": "Book in advance with the school to confirm your place and lesson arrangements.",
+    "price": "Price & availability",
+    "priceNote": "Contact the school for the current price, available dates and vehicle options. The final arrangement depends on your programme and training needs.",
+    "book": "Discuss your training",
+    "gift": "Explore gift certificates"
+  },
+  "About": {
+    "eyebrow": "About REGA",
+    "title": "Confidence comes from practice.",
+    "description": "Taras Rega’s driving school in Lviv helps drivers and motorcyclists build skills, understand their vehicles and make more considered decisions on the road.",
+    "origin": "Our roots",
+    "storyTitle": "Experience from motorsport. A focus on everyday driving.",
+    "storyBody": "REGA was founded by Taras Rega, whose background combines professional sport education, rally competition and coaching. That experience informs the school’s approach to vehicle control and learning through practice.",
+    "storyPurpose": "The aim is practical: help each student understand their starting point, develop sound technique and recognise situations that need a safer decision. Training ranges from first driving lessons to advanced car and motorcycle control.",
+    "approachTitle": "How we approach your training",
+    "individualTitle": "Start with your needs",
+    "individualBody": "Your experience, confidence and goals guide the programme. Exercises and feedback help identify the skills that need attention.",
+    "practiceTitle": "Learn by doing",
+    "practiceBody": "Practise on a specially equipped closed training ground, then use suitable road routes where the programme includes them. Review your actions with an instructor.",
+    "progressTitle": "Build step by step",
+    "progressBody": "A progression of programmes lets you start with the fundamentals, return after a break or continue developing more advanced techniques.",
+    "tryTitle": "Get to know the school",
+    "tryBody": "A free trial lesson gives you a chance to meet an instructor, try introductory exercises and discuss a suitable programme. Advance booking is required.",
+    "tryLink": "Explore the free trial"
   }
 }

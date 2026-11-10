@@ -28,9 +28,12 @@ pnpm build
 pnpm preview
 ```
 
-The build writes `out/`. Preview serves those files at <http://127.0.0.1:4173>;
-`next start` is not used. The production build uses Next's supported Webpack
-option so builds do not require Turbopack's local worker port.
+The build writes `out/`, including `sitemap.xml`, its sitemap index, and
+`robots.txt`. `next-sitemap` reads the static export so every generated locale
+route is listed; the noindex UIKit pages are excluded. Preview serves those
+files at <http://127.0.0.1:4173>; `next start` is not used. The production build
+uses Next's supported Webpack option so builds do not require Turbopack's local
+worker port.
 
 - `/` is a static language chooser.
 - `/en/` and `/uk/` are generated at build time, with translated metadata/content
@@ -40,6 +43,8 @@ option so builds do not require Turbopack's local worker port.
 - Locale pages use `Link` from `@/i18n/navigation`, which wraps Next Link. Add
   next-intl's `useRouter`, `usePathname` or `redirect` exports to this module when
   needed. The root chooser and global 404 use Next Link with explicit locale URLs.
+  Audit all links and navigation when adding routes; use next-intl navigation
+  exports for localized paths so locale handling is preserved.
 - `src/i18n/request.ts` reads the locale through `next/root-params`. New pages
   can call next-intl directly without `setRequestLocale`. Next 16.4's type
   generator incorrectly treats the unlocalized route-group layout as an ancestor
@@ -64,7 +69,7 @@ No hosting or deployment workflow is configured.
 
 ## Components and imports
 
-shadcn/ui uses Base UI, Nova, neutral theme tokens and React Server Components.
+shadcn/ui uses Base UI, Nova, REGA orange theme tokens and React Server Components.
 Generator configuration lives in `components.json`; global theme tokens live in
 `src/styles/globals.css`.
 
@@ -73,8 +78,11 @@ pnpm exec shadcn add dialog
 ```
 
 Generated primitives stay in flat files under `src/components/uikit`. Add named
-exports to its `index.ts`, then run the checks. Application code imports from
+exports to its `index.ts` in alphabetical order by source filename/path, then run the checks. All
+other barrel files follow the same ordering. Application code imports from
 `@/components/uikit`; generated primitives may import each other directly.
+For link styling, use shadcn's `Link` primitive when available together with
+next-intl's `Link` implementation from `@/i18n/navigation`.
 Import `cn` from its package. CVA owns variants. Add dependencies only when used;
 Knip checks unused dependencies and files while preserving generated UIKit export
 and type surfaces.
@@ -97,6 +105,14 @@ wrapper folder. Use `@/` for application imports. Shared UI cannot depend on pag
 implementation; UIKit cannot depend on application UI/state/hooks/i18n. Stores,
 when introduced, cannot depend on UI or route entries. Browser storage access is
 reserved for `src/stores/persistence`; tests may access it directly.
+If global state is needed, use Zustand with persistence through the existing
+`src/stores/persistence` boundary, backed by local or session storage as the
+feature requires.
+
+## Follow-up tasks
+
+- Audit existing links and navigation to ensure localized routes use
+  `@/i18n/navigation` and preserve locale handling.
 
 ESLint and dependency-cruiser enforce these boundaries for both aliases and
 relative paths. Only add feature-specific boundaries once those features exist.
@@ -146,3 +162,27 @@ installed Google Chrome; CI installs Playwright Chromium. Traces and reports are
 ignored by Git. GitHub Actions runs app checks and flake validation concurrently
 on pushes, pull requests and manual dispatches, with frozen pnpm installation
 and cancellation of stale runs. It does not deploy.
+
+## REGA design foundation
+
+`src/styles/globals.css` defines orange semantic tokens for warm light surfaces and
+charcoal dark surfaces. CSS follows system preference without JavaScript. The theme
+control adds explicit light/dark/system choices; Zustand persists the preference
+through `src/stores/persistence`. Storage failures fall back to session memory.
+
+Shared application components live in `src/components/site`; domain-free shadcn
+primitives stay in UIKit. `/en/uikit/` and `/uk/uikit/` showcase the tokens and
+components and carry noindex metadata. Navigation preserves the active locale and
+page when switching languages. All current commercial course slugs are generated
+at build time; unknown courses return 404.
+
+Original HTML, text extracts and research manifests live only in gitignored
+`.ignore/original-rega/`. Never import them into application code or parse them at
+build time. Production copy is deliberately authored in locale messages and course
+content modules. Selected production photographs live in `public/images/`. The
+homepage training photo comes from [REGA’s school listing on EduSearch](https://edusearch.com.ua/lviv/school/rega-avtoshkola).
+
+The first redesign covers training, gifts, school information and contact pages.
+Legacy news/gallery archives, polls and road-rules content need a separate editorial
+review. Contact actions use phone/email; no order, payment or message backend is
+configured. Source prices/promotions must be reconfirmed before publication.

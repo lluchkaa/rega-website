@@ -2,49 +2,90 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
-@custom-variant dark (&:is(.dark *));
-
-:root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --radius: 0.625rem;
+@custom-variant dark {
+  &:where([data-theme='dark'], [data-theme='dark'] *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(
+      :root:not([data-theme='light']),
+      :root:not([data-theme='light']) *
+    ) {
+      @slot;
+    }
+  }
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+:root {
+  color-scheme: light;
+  --background: #f8f7f4;
+  --foreground: #202421;
+  --card: #ffffff;
+  --card-foreground: #202421;
+  --popover: #ffffff;
+  --popover-foreground: #202421;
+  --primary: #b74412;
+  --primary-hover: #9d3a0e;
+  --primary-foreground: #ffffff;
+  --secondary: #efebe4;
+  --secondary-foreground: #373c37;
+  --muted: #efebe4;
+  --muted-foreground: #62675f;
+  --accent: #f58220;
+  --accent-foreground: #202421;
+  --destructive: #b42318;
+  --border: #dddcd5;
+  --input: #dddcd5;
+  --ring: #b74412;
+  --radius: 0.75rem;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --background: #161817;
+  --foreground: #f5f3ee;
+  --card: #202421;
+  --card-foreground: #f5f3ee;
+  --popover: #202421;
+  --popover-foreground: #f5f3ee;
+  --primary: #ff9a5c;
+  --primary-hover: #ffad7d;
+  --primary-foreground: #27170e;
+  --secondary: #2c302c;
+  --secondary-foreground: #f5f3ee;
+  --muted: #2c302c;
+  --muted-foreground: #b4b9af;
+  --accent: #f58220;
+  --accent-foreground: #202421;
+  --destructive: #ff8a80;
+  --border: #3c423c;
+  --input: #3c423c;
+  --ring: #ff9a5c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --background: #161817;
+    --foreground: #f5f3ee;
+    --card: #202421;
+    --card-foreground: #f5f3ee;
+    --popover: #202421;
+    --popover-foreground: #f5f3ee;
+    --primary: #ff9a5c;
+    --primary-hover: #ffad7d;
+    --primary-foreground: #27170e;
+    --secondary: #2c302c;
+    --secondary-foreground: #f5f3ee;
+    --muted: #2c302c;
+    --muted-foreground: #b4b9af;
+    --accent: #f58220;
+    --accent-foreground: #202421;
+    --destructive: #ff8a80;
+    --border: #3c423c;
+    --input: #3c423c;
+    --ring: #ff9a5c;
+  }
 }
 
 @theme inline {
@@ -56,6 +97,7 @@
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -79,5 +121,35 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer base {
+  body {
+    min-width: 320px;
+  }
+  ::selection {
+    background: var(--accent);
+    color: #202421;
+  }
+  a,
+  summary {
+    outline-offset: 5px;
+  }
+  a:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid var(--ring);
+  }
+  summary {
+    cursor: pointer;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }

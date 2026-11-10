@@ -50,3 +50,6 @@ yarn-error.log*
 .husky/_/
 /playwright-report/
 /test-results/
+
+# Original website research
+/.ignore/
